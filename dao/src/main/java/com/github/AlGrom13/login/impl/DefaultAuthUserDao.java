@@ -9,13 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DefaultAuthUserDao implements AuthUserDao {
-    Map<String, AuthUser> userByLogin;
+    Map<String, AuthUser> authUsers;
 
     public DefaultAuthUserDao() {
-        this.userByLogin = new HashMap<>();
-        this.userByLogin.putIfAbsent("admin",
+        this.authUsers = new HashMap<>();
+        this.authUsers.putIfAbsent("admin",
                 new AuthUser("admin", "admin", Role.ADMIN);
-        this.userByLogin.putIfAbsent("user",
+        this.authUsers.putIfAbsent("user",
                 new AuthUser("user", "user", Role.USER));
     }
 
@@ -36,11 +36,11 @@ public class DefaultAuthUserDao implements AuthUserDao {
 
     @Override
     public AuthUser getByLogin(String login) {
-        return null;
+        return authUsers.get(login);
     }
 
     @Override
     public boolean saveAuthUser(AuthUser user) {
-        return false;
+        return authUsers.putIfAbsent(user.getLogin(), user);
     }
 }
