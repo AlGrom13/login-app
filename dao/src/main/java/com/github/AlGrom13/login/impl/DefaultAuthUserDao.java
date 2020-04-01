@@ -14,7 +14,7 @@ public class DefaultAuthUserDao implements AuthUserDao {
     public DefaultAuthUserDao() {
         this.authUsers = new HashMap<>();
         this.authUsers.putIfAbsent("admin",
-                new AuthUser("admin", "admin", Role.ADMIN);
+                new AuthUser("admin", "admin", Role.ADMIN));
         this.authUsers.putIfAbsent("user",
                 new AuthUser("user", "user", Role.USER));
     }
@@ -40,7 +40,7 @@ public class DefaultAuthUserDao implements AuthUserDao {
     }
 
     @Override
-    public boolean saveAuthUser(AuthUser user) {
-        return authUsers.putIfAbsent(user.getLogin(), user);
+    public void saveAuthUser(AuthUser user) {
+        authUsers.putIfAbsent(user.getLogin(), user);
     }
 }

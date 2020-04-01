@@ -6,5 +6,5 @@ public interface AuthUserDao {
 
     AuthUser getByLogin(String login);
 
-    boolean saveAuthUser(AuthUser user);
+    void saveAuthUser(AuthUser user);
 }
