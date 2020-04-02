@@ -6,7 +6,9 @@ import com.github.AlGrom13.login.model.Role;
 
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class DefaultAuthUserDao implements AuthUserDao {
     Map<String, AuthUser> authUsers;
@@ -32,6 +34,11 @@ public class DefaultAuthUserDao implements AuthUserDao {
             }
         }
         return localInstance;
+    }
+
+    @Override
+    public List<AuthUser> getAllUsers() {
+        return authUsers.values().stream().collect(Collectors.toList());
     }
 
     @Override
