@@ -31,7 +31,7 @@ public class DefaultSecurityService implements SecurityService {
         }
         boolean isPasswordCorrect = authUser.getPassword().equals(user.getPassword());
         if (isPasswordCorrect) {
-            return user;
+            return authUser;
         }
         return null;
     }

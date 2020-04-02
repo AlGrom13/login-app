@@ -5,9 +5,13 @@ public class AuthUser {
     private String password;
     private Role role;
 
-    public AuthUser(String login, String password, Role role) {
+    public AuthUser(String login, String password) {
         this.login = login;
         this.password = password;
+    }
+
+    public AuthUser(String login, String password, Role role) {
+        this(login, password);
         this.role = role;
     }
 
