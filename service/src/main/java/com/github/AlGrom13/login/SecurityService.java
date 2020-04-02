@@ -4,5 +4,5 @@ import com.github.AlGrom13.login.model.AuthUser;
 
 public interface SecurityService {
 
-    AuthUser login(AuthUser user);
+    AuthUser login(String login, String password);
 }

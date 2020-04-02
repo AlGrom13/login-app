@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>web</module>
         <module>model</module>
         <module>dao</module>
         <module>service</module>

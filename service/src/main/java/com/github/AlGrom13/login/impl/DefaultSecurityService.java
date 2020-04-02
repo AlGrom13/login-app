@@ -23,13 +23,13 @@ public class DefaultSecurityService implements SecurityService {
     }
 
     @Override
-    public AuthUser login(AuthUser user) {
-        AuthUser authUser = authUserDao.getByLogin(user.getLogin());
-        boolean isNotRegisteredUser = authUser == null;
+    public AuthUser login(String login, String password) {
+        AuthUser authUser = authUserDao.getByLogin(login);
+        boolean isNotRegisteredUser = (authUser == null);
         if (isNotRegisteredUser) {
             return null;
         }
-        boolean isPasswordCorrect = authUser.getPassword().equals(user.getPassword());
+        boolean isPasswordCorrect = authUser.getPassword().equals(password);
         if (isPasswordCorrect) {
             return authUser;
         }

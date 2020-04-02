@@ -20,7 +20,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         String login = req.getParameter("login");
         String password = req.getParameter("password");
-        AuthUser user = securityService.login(new AuthUser(login, password));
+        AuthUser user = securityService.login(login, password);
         if (user == null) {
             req.setAttribute("error", "login or password invalid");
             WebUtils.forward("login", req, resp);

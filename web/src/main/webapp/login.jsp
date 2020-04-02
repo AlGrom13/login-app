@@ -23,8 +23,8 @@
 <body>
 <div id="action_form">
     <form action="${pageContext.request.contextPath}/login" method="post">
-        <label for="username">Логин:</label>
-        <input name="username" id="username" type="text"><br/>
+        <label for="login">Логин:</label>
+        <input name="login" id="login" type="text"><br/>
         <label for="password">Пароль:</label>
         <input name="password" id="password" type="password">
         <p><input type="submit" value="Войти"></p>
