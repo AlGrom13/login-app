@@ -31,7 +31,7 @@
         <label for="email">Role</label>
         <input id="email" type="text" name="role"><br/>
 
-        <input type="submit">
+        <input type="submit" value="Create user">
     </form>
 </c:if>
 

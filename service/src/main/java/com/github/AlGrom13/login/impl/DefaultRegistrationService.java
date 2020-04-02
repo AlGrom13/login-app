@@ -24,7 +24,7 @@ public class DefaultRegistrationService implements RegistrationService {
 
     @Override
     public boolean registerUser(AuthUser user) {
-        if (authUserDao.getByLogin(user.getLogin()) == null) {
+        if (authUserDao.getByLogin(user.getLogin()) != null) {
             return false;
         }
         authUserDao.saveAuthUser(user);
