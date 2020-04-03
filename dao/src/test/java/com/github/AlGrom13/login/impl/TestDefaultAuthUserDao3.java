@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DefaultAuthUserDaoTest2 {
+class TestDefaultAuthUserDao3 {
     private static AuthUserDao authUserDao;
 
     @BeforeAll
@@ -18,14 +18,11 @@ class DefaultAuthUserDaoTest2 {
     }
 
     @Test
-    @DisplayName("Save new users test.")
-    void saveAuthUserTest() {
-        authUserDao.saveAuthUser(new AuthUser("user1", "qwe123", Role.USER));
-        authUserDao.saveAuthUser(new AuthUser("user2", "1234"));
+    @DisplayName("User can't be rewritable")
+    void rewriteAuthUserTest() {
+        String oldPassword = "user";
+        authUserDao.saveAuthUser(new AuthUser("user", "qwe123", Role.USER));
 
-        assertAll(
-                () -> assertNotEquals(null, authUserDao.getByLogin("user1")),
-                () -> assertNotEquals(null, authUserDao.getByLogin("user2"))
-        );
+        assertEquals(oldPassword, authUserDao.getByLogin("user").getPassword());
     }
 }

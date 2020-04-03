@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DefaultAuthUserDaoTest4 {
+class TestDefaultAuthUserDao1 {
     private static AuthUserDao authUserDao;
 
     @BeforeAll
