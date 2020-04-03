@@ -1,5 +1,5 @@
 # Login-app #
-# h2 Demo login web app
+# Demo login web app
 =======
 Can log in users,register users
 =======
