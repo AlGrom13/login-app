@@ -29,6 +29,7 @@
         <input name="password" id="password" type="password">
         <p><input type="submit" value="Войти"></p>
         <p style="color: red">${requestScope.error}</p>
+        <a href="${pageContext.request.contextPath}/register">Register</a>
     </form>
 </div>
 </body>
